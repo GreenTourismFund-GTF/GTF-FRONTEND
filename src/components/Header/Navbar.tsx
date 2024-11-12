@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ExternalLink, Menu, X } from 'lucide-react';
+import { ExternalLink, Menu, User, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { WalletInfo } from '../../lib/types';
 import { Button } from '../ui/button';
@@ -243,7 +243,13 @@ const Navbar = () =>
 
                     <div className="flex items-center gap-4 md:gap-6">
 
-                        <div className="hidden md:flex md:relative">
+                        <div className="hidden gap-3 md:flex md:relative">
+                            <Link to="/login">
+                                <Button className="w-full mt-4 mb-2 bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium text-sm shadow-sm">
+                                    Login
+                                    <User className="ml-2 h-4 w-4" />
+                                </Button>
+                            </Link>
                             {renderFundingOptions()}
                         </div>
 
@@ -272,7 +278,7 @@ const Navbar = () =>
                             : 'opacity-0 translate-y-[-10px] invisible'
                         }`}
                     style={{
-                        top: '64px', // Matches the mobile header height
+                        top: '64px', 
                         maxHeight: isOpen ? '100vh' : '0',
                         boxShadow: isOpen ? '0 4px 6px -1px rgb(0 0 0 / 0.1)' : 'none'
                     }}
@@ -288,10 +294,11 @@ const Navbar = () =>
                                 </button>
                             </Link>
                         ))}
+                        <Button className="w-full mt-4 mb-2 bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium text-sm shadow-sm">
+                            Login
+                            <User className="ml-2 h-4 w-4" />
+                        </Button>
                         {renderFundingOptions()}
-                        {/* <button className="w-full mt-4 mb-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium text-sm shadow-sm">
-                            Connect Wallet
-                        </button> */}
                     </div>
                 </div>
             </div>
