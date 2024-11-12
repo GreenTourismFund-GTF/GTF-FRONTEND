@@ -294,7 +294,7 @@ const Navbar = () =>
                                 </button>
                             </Link>
                         ))}
-                        <Button className="w-full mt-4 mb-2 bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium text-sm shadow-sm">
+                        <Button className="w-full mt-4 mb-4 bg-slate-700 hover:bg-slate-800 text-white px-6 py-3 rounded-lg transition-colors duration-200 font-medium text-sm shadow-sm">
                             Login
                             <User className="ml-2 h-4 w-4" />
                         </Button>

@@ -23,7 +23,7 @@ const LoginPage = () =>
 
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-br from-slate-800 to-slate-900">
-            <Card className="w-full max-w-md">
+            <Card className="w-[95%] max-w-md">
                 <CardHeader>
                     <CardTitle>
                         <div className="flex items-center space-x-2">

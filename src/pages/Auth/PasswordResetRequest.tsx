@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Key, User } from 'lucide-react';
+import { Key} from 'lucide-react';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../../components/ui/card';
@@ -19,7 +19,7 @@ const PasswordResetRequest = () =>
 
     return (
         <div className="flex justify-center items-center h-screen bg-gradient-to-br from-slate-800 to-slate-900">
-            <Card className="w-full max-w-md">
+            <Card className="w-[95%] max-w-md">
                 <CardHeader>
                     <CardTitle>
                         <div className="flex items-center space-x-2">
