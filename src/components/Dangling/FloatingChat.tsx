@@ -55,22 +55,24 @@ const FloatingChat: React.FC<FloatingChatProps> = ({
     };
 
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) =>
+    {
         e.preventDefault();
         if (!inputValue.trim()) return;
-    
+
         const newMessage: Message = {
             id: Date.now().toString(),
             type: 'user',
             content: inputValue.trim(),
             timestamp: new Date()
         };
-    
+
         setMessages(prev => [...prev, newMessage]);
         setInputValue('');
         setIsTyping(true);
-    
-        try {
+
+        try
+        {
             const response = await fetch('https://api.openai.com/v1/chat/completions', {
                 method: 'POST',
                 headers: {
@@ -82,29 +84,33 @@ const FloatingChat: React.FC<FloatingChatProps> = ({
                     messages: [{ role: "user", content: inputValue.trim() }]
                 })
             });
-    
-            if (!response.ok) {
+
+            if (!response.ok)
+            {
                 throw new Error(`Error ${response.status}: ${response.statusText}`);
             }
-    
+
             const data = await response.json();
-    
+
             // Check for the existence of data.choices and data.choices[0].message.content
-            if (data.choices && data.choices[0] && data.choices[0].message.content) {
+            if (data.choices && data.choices[0] && data.choices[0].message.content)
+            {
                 const botMessage = data.choices[0].message.content;
-    
+
                 const botResponse: Message = {
                     id: (Date.now() + 1).toString(),
                     type: 'bot',
                     content: botMessage,
                     timestamp: new Date()
                 };
-    
+
                 setMessages(prev => [...prev, botResponse]);
-            } else {
+            } else
+            {
                 throw new Error("No content in response from GPT");
             }
-        } catch (error) {
+        } catch (error)
+        {
             console.error("Error fetching GPT response:", error);
             const errorMessage: Message = {
                 id: (Date.now() + 1).toString(),
@@ -113,11 +119,12 @@ const FloatingChat: React.FC<FloatingChatProps> = ({
                 timestamp: new Date()
             };
             setMessages(prev => [...prev, errorMessage]);
-        } finally {
+        } finally
+        {
             setIsTyping(false);
         }
     };
-    
+
 
 
     const handleKeyPress = (e: React.KeyboardEvent) =>
