@@ -99,7 +99,7 @@ export const CommentSection = ({ projectId }: CommentSectionProps) => {
               </p>
             </div>
             <DropdownMenu>
-              <DropdownMenuTrigger className="hover:bg-gray-100 p-1 rounded">
+              <DropdownMenuTrigger className="hover:bg-gray-100 bg-gray-50 p-1 rounded">
                 <MoreVertical className="h-4 w-4 text-gray-500" />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -129,7 +129,7 @@ export const CommentSection = ({ projectId }: CommentSectionProps) => {
               <textarea
                 value={editContent}
                 onChange={(e) => setEditContent(e.target.value)}
-                className="w-full p-2 border rounded-md resize-none"
+                className="w-full bg-white p-2 border rounded-md resize-none"
                 rows={3}
               />
               <div className="flex gap-2 mt-2">
@@ -154,13 +154,13 @@ export const CommentSection = ({ projectId }: CommentSectionProps) => {
         </div>
 
         <div className="flex items-center gap-4 mt-2">
-          <button className="flex items-center gap-1 text-sm text-gray-500 hover:text-red-500">
+          <button className="flex bg-gray-50 items-center gap-1 text-sm text-gray-500 hover:text-red-500">
             <Heart className="h-4 w-4" />
             <span>{comment.likes}</span>
           </button>
           <button
             onClick={() => setReplyingTo(comment.id)}
-            className="flex items-center gap-1 text-sm text-gray-500 hover:text-green-600"
+            className="flex bg-gray-50 items-center gap-1 text-sm text-gray-500 hover:text-green-600"
           >
             <Reply className="h-4 w-4" />
             <span>Reply</span>
@@ -179,7 +179,7 @@ export const CommentSection = ({ projectId }: CommentSectionProps) => {
             }}>
               <textarea
                 placeholder="Write a reply..."
-                className="w-full p-2 border rounded-md resize-none"
+                className="w-full bg-white p-2 border rounded-md resize-none"
                 rows={2}
               />
               <div className="flex gap-2 mt-2">
@@ -218,7 +218,7 @@ export const CommentSection = ({ projectId }: CommentSectionProps) => {
           value={newComment}
           onChange={(e) => setNewComment(e.target.value)}
           placeholder="Write a comment..."
-          className="w-full p-3 border rounded-lg resize-none"
+          className="w-full bg-white p-3 border rounded-lg resize-none"
           rows={3}
         />
         <button

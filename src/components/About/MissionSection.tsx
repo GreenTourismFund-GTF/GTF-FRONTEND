@@ -60,7 +60,7 @@ const MissionSection: React.FC = () =>
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id)}
-                                className={`relative px-8 py-3.5 rounded-lg font-medium transition-all duration-300 ease-in-out
+                                className={`bg-gray-50 relative px-8 py-3.5 rounded-lg font-medium transition-all duration-300 ease-in-out
                   ${activeTab === tab.id
                                         ? 'text-white'
                                         : 'text-gray-600 hover:text-green-600'

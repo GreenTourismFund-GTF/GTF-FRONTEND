@@ -229,7 +229,7 @@ const Navbar = () =>
                             {menuItems.map((item) => (
                                 <Link key={item.label} to={item.href}>
                                     <button
-                                        className="relative text-gray-600 hover:text-green-600 font-medium transition-colors duration-200 outline-none focus:outline-none group"
+                                        className="relative bg-white text-gray-600 hover:text-green-600 font-medium transition-colors duration-200 outline-none focus:outline-none group"
                                     >
                                         <span className="relative py-2">
                                             {item.label}

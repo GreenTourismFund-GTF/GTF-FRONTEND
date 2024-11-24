@@ -16,7 +16,7 @@ import unEnv from "../assets/about/un-env.png";
 import ecoTour from "../assets/about/ecotour.png";
 import global from "../assets/about/global.png";
 import wideFund from "../assets/about/widefund.png";
-import theo from "../assets/about/theo.jpg";
+import kenny from "../assets/about/kenny.png";
 import { Link } from 'react-router-dom';
 interface TeamMember
 {
@@ -117,23 +117,23 @@ const About: React.FC = () =>
 
   const teamMembers: TeamMember[] = [
     {
-      name: "Sarah Johnson",
+      name: "Arowolo kehinde",
       role: "Founder & CEO",
-      image: theo,
+      image: kenny,
       bio: "20+ years in sustainable tourism",
       links: { twitter: "#", linkedin: "#" }
     },
     {
-      name: "Michael Chang",
+      name: "Arowolo kehinde",
       role: "Head of Sustainability",
-      image: theo,
+      image: kenny,
       bio: "Environmental scientist & consultant",
       links: { twitter: "#", linkedin: "#" }
     },
     {
-      name: "Elena Rodriguez",
+      name: "Arowolo kehinde",
       role: "Community Director",
-      image: theo,
+      image: kenny,
       bio: "Expert in community-driven initiatives",
       links: { twitter: "#", linkedin: "#" }
     }

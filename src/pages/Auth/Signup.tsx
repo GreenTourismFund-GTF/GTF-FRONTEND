@@ -19,7 +19,7 @@ const SignupPage = () =>
     {
         // Implement your signup logic here
         console.log('Signing up with:', { name, email, password, confirmPassword });
-        navigate('/dashboard');
+        navigate('/login');
     };
 
     return (

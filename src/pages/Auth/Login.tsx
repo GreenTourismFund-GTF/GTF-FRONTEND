@@ -18,7 +18,7 @@ const LoginPage = () =>
     {
         // Implement your login logic here
         console.log('Logging in with:', { email, password, rememberMe });
-        navigate('/dashboard');
+        navigate('/');
     };
 
     return (

@@ -88,7 +88,7 @@ const ProjectCard = ({ project }: ProjectCardProps) =>
               <button
                 onClick={handleLike}
                 className={cn(
-                  "flex items-center gap-1 transition-colors duration-200",
+                  "flex bg-gray-50 items-center gap-1 transition-colors duration-200",
                   isLiked ? "text-red-500" : "text-gray-600 hover:text-red-500"
                 )}
               >
@@ -98,7 +98,7 @@ const ProjectCard = ({ project }: ProjectCardProps) =>
 
               <button
                 onClick={() => setShowComments(!showComments)}
-                className="flex items-center gap-1 text-gray-600 hover:text-green-600 transition-colors duration-200"
+                className="flex bg-gray-50 items-center gap-1 text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 <MessageSquare className="h-5 w-5" />
                 <span>{project.comments}</span>
@@ -106,7 +106,7 @@ const ProjectCard = ({ project }: ProjectCardProps) =>
 
               <button
                 onClick={handleShare}
-                className="flex items-center gap-1 text-gray-600 hover:text-green-600 transition-colors duration-200"
+                className="flex bg-gray-50 items-center gap-1 text-gray-600 hover:text-green-600 transition-colors duration-200"
               >
                 <Share2 className="h-5 w-5" />
                 <span>{project.shares}</span>
@@ -116,7 +116,7 @@ const ProjectCard = ({ project }: ProjectCardProps) =>
             <button
               onClick={() => setIsSaved(!isSaved)}
               className={cn(
-                "flex items-center gap-1 transition-colors duration-200",
+                "flex bg-gray-50 items-center gap-1 transition-colors duration-200",
                 isSaved ? "text-green-600" : "text-gray-600 hover:text-green-600"
               )}
             >

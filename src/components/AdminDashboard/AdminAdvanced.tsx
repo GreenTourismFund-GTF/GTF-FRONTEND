@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import
 {
     BarChart3, Users, FolderKanban, Bell, Settings, ChevronLeft,
@@ -358,10 +358,12 @@ const AdminAdvanced = () =>
                         </SelectContent>
                     </Select>
                 </div>
+                <Link to="/create">
                 <Button>
                     <PlusCircle className="mr-2 h-4 w-4" />
                     New Project
                 </Button>
+                </Link>
             </div>
 
             <div className="grid gap-4">
@@ -483,10 +485,10 @@ const AdminAdvanced = () =>
                                     <Badge variant={user.status === 'active' ? 'default' : 'secondary'}>
                                         {user.status}
                                     </Badge>
-                                    <Button variant="ghost" size="icon">
+                                    <Button className='bg-gray-50' variant="ghost" size="icon">
                                         <Edit className="h-4 w-4" />
                                     </Button>
-                                    <Button variant="ghost" size="icon">
+                                    <Button className='bg-gray-50' variant="ghost" size="icon">
                                         <Trash2 className="h-4 w-4" />
                                     </Button>
                                 </div>
@@ -601,7 +603,7 @@ const AdminAdvanced = () =>
                                         <p className="text-xs text-gray-400 mt-2">{notification.date}</p>
                                     </div>
                                 </div>
-                                <Button variant="ghost" size="icon">
+                                <Button className='bg-gray-50' variant="ghost" size="icon">
                                     <X className="h-4 w-4" />
                                 </Button>
                             </div>
@@ -643,7 +645,7 @@ const AdminAdvanced = () =>
                         <button
                             key={item.id}
                             onClick={() => setSelectedTab(item.id)}
-                            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors
+                            className={`w-full bg-gray-50 flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors
                 ${selectedTab === item.id ? 'bg-blue-50 text-blue-600' : 'text-gray-600 hover:bg-gray-50'}`}
                         >
                             <item.icon className="h-5 w-5" />
@@ -696,10 +698,10 @@ const AdminAdvanced = () =>
                             <h2 className="text-xl font-semibold capitalize">{selectedTab}</h2>
                         </div>
                         <div className="flex items-center space-x-4">
-                            <Button variant="ghost" size="icon">
+                            <Button className='bg-gray-50' variant="ghost" size="icon">
                                 <Bell className="h-5 w-5" />
                             </Button>
-                            <Button variant="ghost" size="icon">
+                            <Button className='bg-gray-50' variant="ghost" size="icon">
                                 <Settings className="h-5 w-5" />
                             </Button>
                         </div>
