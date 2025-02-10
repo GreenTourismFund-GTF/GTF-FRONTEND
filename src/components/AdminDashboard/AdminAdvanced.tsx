@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import
 {
     BarChart3, Users, FolderKanban, Bell, Settings, ChevronLeft,
-    ChevronRight, Search, Wallet, Circle, PlusCircle, Filter,
-    ArrowUpRight, ArrowDownRight, MenuIcon,
+    ChevronRight, Wallet, PlusCircle, ArrowUpRight, MenuIcon,
     Check,
     AlertCircle,
     Edit,
@@ -30,7 +29,6 @@ import
     Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
 } from '../ui/select';
 import { Avatar } from '../ui/avatar';
-import { Switch } from '../ui/switch';
 import SettingsPanel from './SettingsPanel';
 
 const mockUsers = [
@@ -94,26 +92,6 @@ const mockNotifications = [
     }
 ];
 
-const mockSettings = [
-    {
-        id: 1,
-        category: "Notifications",
-        settings: [
-            { id: "email_notif", label: "Email Notifications", enabled: true },
-            { id: "push_notif", label: "Push Notifications", enabled: false }
-        ]
-    },
-    {
-        id: 2,
-        category: "Security",
-        settings: [
-            { id: "two_factor", label: "Two-Factor Authentication", enabled: true },
-            { id: "session_timeout", label: "Auto Session Timeout", enabled: true }
-        ]
-    }
-];
-
-
 const mockProjects = [
     {
         id: 1,
@@ -170,7 +148,6 @@ const AdminAdvanced = () =>
     const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
     const [selectedTab, setSelectedTab] = useState('overview');
     const [searchTerm, setSearchTerm] = useState('');
-    const navigate = useNavigate();
 
     const sidebarItems = [
         { id: 'overview', label: 'Overview', icon: BarChart3 },
@@ -397,44 +374,6 @@ const AdminAdvanced = () =>
         </div>
     );
 
-    const renderFooter = () => (
-        <footer className="bg-white border-t py-6 px-4">
-            <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <h3 className="font-semibold mb-2">About</h3>
-                        <p className="text-sm text-gray-600">Admin Advanced for managing projects and funding.</p>
-                    </div>
-                    <div>
-                        <h3 className="font-semibold mb-2">Quick Links</h3>
-                        <ul className="space-y-1">
-                            {sidebarItems.map(item => (
-                                <li key={item.id}>
-                                    <button
-                                        onClick={() => setSelectedTab(item.id)}
-                                        className="text-sm text-gray-600 hover:text-gray-900"
-                                    >
-                                        {item.label}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 className="font-semibold mb-2">Contact</h3>
-                        <p className="text-sm text-gray-600">
-                            Email: support@example.com<br />
-                            Phone: (555) 123-4567
-                        </p>
-                    </div>
-                </div>
-                <div className="mt-6 pt-6 border-t text-center text-sm text-gray-600">
-                    © 2024 Your Company. All rights reserved.
-                </div>
-            </div>
-        </footer>
-    );
-
     const renderUsers = () => (
         <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -613,9 +552,6 @@ const AdminAdvanced = () =>
             </div>
         </div>
     );
-
-   
-
 
     return (
         <div className="min-h-screen flex flex-col bg-gray-50">

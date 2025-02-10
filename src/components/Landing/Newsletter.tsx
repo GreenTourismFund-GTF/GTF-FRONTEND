@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion'
 
-type Props = {}
-
-const Newsletter = (props: Props) =>
+const Newsletter = () =>
 {
     return (
         <section className="py-16 bg-green-50">

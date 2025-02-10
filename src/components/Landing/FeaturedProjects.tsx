@@ -21,14 +21,6 @@ interface Project
     tags: string[];
 }
 
-interface Filters
-{
-    impact: string;
-    duration: string;
-    category: string;
-    location: string;
-}
-
 // Sample project data
 const projectsData: Project[] = [
     {

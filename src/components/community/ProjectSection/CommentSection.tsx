@@ -21,7 +21,7 @@ interface CommentSectionProps {
   projectId: number;
 }
 
-export const CommentSection = ({ projectId }: CommentSectionProps) => {
+export const CommentSection: React.FC<CommentSectionProps> = ({ projectId }) => {
   const [comments, setComments] = useState<Comment[]>([]);
   const [newComment, setNewComment] = useState('');
   const [editingComment, setEditingComment] = useState<string | null>(null);
@@ -211,6 +211,7 @@ export const CommentSection = ({ projectId }: CommentSectionProps) => {
   return (
     <div>
       <h3 className="text-lg font-semibold mb-4">Comments</h3>
+      <p>Comments for project {projectId}</p>
       
       {/* Add Comment Form */}
       <form onSubmit={handleAddComment} className="mb-6">

@@ -1,7 +1,5 @@
-
-type Props = {}
-
-const Contact = (props: Props) => {
+// Contact.tsx
+const Contact = () => {  // Removed unused props
   return (
     <div>Contact</div>
   )

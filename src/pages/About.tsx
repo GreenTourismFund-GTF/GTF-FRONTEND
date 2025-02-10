@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import
 {
 
@@ -54,14 +54,6 @@ const About: React.FC = () =>
 {
   const [isVisible, setIsVisible] = useState<VisibilityState>({});
 
-  const [count, setCount] = useState<CountState>({
-    projects: 0,
-    countries: 0,
-    impact: 0,
-    community: 0
-  });
-
-  const statsRef = useRef<HTMLElement | null>(null);
   const targetStats: CountState = {
     projects: 150,
     countries: 45,
@@ -95,9 +87,9 @@ const About: React.FC = () =>
                   current = targetStats[stat as keyof CountState];
                   clearInterval(timer);
                 }
-                setCount(prev => ({
+                setIsVisible(prev => ({
                   ...prev,
-                  [stat]: Math.floor(current)
+                  [stat]: Math.floor(current) > 0 // Ensure the value is boolean
                 }));
               }, 50);
             });

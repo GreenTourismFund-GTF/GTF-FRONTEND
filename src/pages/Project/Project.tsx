@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '../../components/ui/card';
 import { Button } from '../../components/ui/button';
@@ -120,7 +120,7 @@ const ProjectDetailPage: React.FC = () =>
     const [showPaymentSuccess, setShowPaymentSuccess] = useState<boolean>(false);
     const [raised, setRaised] = useState<number>(projectData.raised);
     const [isConnecting, setIsConnecting] = useState<boolean>(false);
-    const [connectedAddress, setConnectedAddress] = useState<string>("");
+    const [_, setConnectedAddress] = useState<string>('');
 
     const connectWallet = async (): Promise<void> =>
     {

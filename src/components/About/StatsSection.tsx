@@ -75,7 +75,6 @@ const StatsSection: React.FC<StatsSectionProps> = ({ count }) =>
       const interval = duration / steps;
 
       const animateValue = (
-        start: number,
         end: number,
         setter: (value: number) => void
       ): void =>
@@ -99,7 +98,6 @@ const StatsSection: React.FC<StatsSectionProps> = ({ count }) =>
       Object.entries(count).forEach(([key, value]) =>
       {
         animateValue(
-          0,
           value,
           (newValue) => setAnimatedCounts(prev => ({
             ...prev,

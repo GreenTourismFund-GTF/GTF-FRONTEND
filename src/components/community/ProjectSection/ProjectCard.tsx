@@ -5,8 +5,7 @@ import { ShareModal } from './ShareModal';
 import { cn } from '../../../lib/utils';
 import { CommentProvider } from './CommentProvider';
 
-interface Project
-{
+interface Project {
   id: number;
   title: string;
   location: string;
@@ -22,27 +21,28 @@ interface Project
   category: string;
 }
 
-interface ProjectCardProps
-{
+interface ProjectCardProps {
   project: Project;
 }
 
-const ProjectCard = ({ project }: ProjectCardProps) =>
-{
+// Make sure CommentSection.tsx has this interface
+export interface CommentSectionProps {
+  projectId: number;
+}
+
+const ProjectCard = ({ project }: ProjectCardProps) => {
   const [isLiked, setIsLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(project.likes);
   const [showComments, setShowComments] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
 
-  const handleLike = () =>
-  {
+  const handleLike = () => {
     setIsLiked(!isLiked);
     setLikesCount(prev => isLiked ? prev - 1 : prev + 1);
   };
 
-  const handleShare = () =>
-  {
+  const handleShare = () => {
     setShowShareModal(true);
   };
 
